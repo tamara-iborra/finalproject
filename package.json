@@ -19,5 +19,9 @@
     "vite-tsconfig-paths": "^5.1.4"
   },
   "keywords": [],
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0",
+    "express-handlebars": "^8.0.3"
+  }
 }
