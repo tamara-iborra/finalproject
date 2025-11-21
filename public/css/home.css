@@ -1,0 +1,84 @@
+/* Hero */
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - var(--header-height));
+  background-image: linear-gradient(to bottom,  rgba(250, 250, 250, 0.6) 59%, #fff 100%), url('../img/hands.webp');
+  background-size: cover;
+  background-position: center;
+}
+
+.hero .hero-title {
+  width: 60vw;
+  text-align: center;
+  font-size: 4.6rem;
+  font-weight: 800;
+  text-shadow: 0px 2px 2px rgba(255, 255, 255, 0.6);
+}
+
+.hero .hero-title span {
+  color: #d7413d;
+}
+
+.hero p {
+  width: 28vw;
+  color: var(--text-color);
+  text-align: center;
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.6);
+  margin-bottom: 30px;
+  font-size: 1.4rem;
+  font-weight: 400;
+  margin: 8px 0 48px 0;
+}
+
+.hero-img {
+  margin-top: 30px;
+  max-width: 700px;
+  border-radius: 22px;
+}
+
+/* About Section */
+.about {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.about h2 {
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.about p {
+  font-size: 1.1rem;
+  color: var(--muted-2);
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.about ul {
+  list-style: none;
+  padding: 0;
+}
+
+.about ul li {
+  margin: 10px 0;
+  font-size: 1rem;
+  color: #1d1d1f;
+}
+
+/* Features Section */
+.features {
+  display: flex;
+  justify-content: space-around;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.feature h3 {
+  margin-bottom: 10px;
+}

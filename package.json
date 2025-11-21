@@ -21,7 +21,19 @@
   "keywords": [],
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^17.2.3",
     "express": "^5.1.0",
     "express-handlebars": "^8.0.3"
-  }
+  },
+  "description": "",
+  "main": "eslint.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maldita-malin/interpals.git"
+  },
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/maldita-malin/interpals/issues"
+  },
+  "homepage": "https://github.com/maldita-malin/interpals#readme"
 }
