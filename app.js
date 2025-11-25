@@ -6,7 +6,7 @@ import { v2 as cloudinary } from 'cloudinary';
 //db = database = base de datos
 import { Low } from 'lowdb';
 import { JSONFile } from 'lowdb/node';
-
+//import path from 'path';
 import upload from './config/multer.js';
 
 
@@ -21,13 +21,16 @@ cloudinary.config({
 });
 
 // Configurar LowDB 
-const adapter = new JSONFile('./db/db.json');
-const db = new Low(adapter);
+const adapter = new JSONFile('db.json');
+const defaultData = { users: [], posts: [] }
+const db = new Low(adapter, defaultData);
+
 await db.read();
-db.data ||= { 
-    users: [], 
-    cartas: [] 
-};
+console.log(db.data) // { users: [], posts: [] }
+//db.data ||= { 
+//    users: [], 
+//    cartas: [] 
+//};
 await db.write();
 console.log('DB cargada correctamente', db.data);
 
