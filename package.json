@@ -1,25 +1,24 @@
 {
   "name": "interpals",
-  "private": true,
   "version": "0.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "rm -rf dist && vite build",
-    "preview": "vite preview",
-    "deploy": "gh-pages -d dist"
+  "private": true,
+  "description": "",
+  "homepage": "https://github.com/maldita-malin/interpals#readme",
+  "bugs": {
+    "url": "https://github.com/maldita-malin/interpals/issues"
   },
-  "devDependencies": {
-    "eslint": "9.22.0",
-    "eslint-config-manzdev": "1.0.14-alpha",
-    "gh-pages": "^6.3.0",
-    "stylelint": "16.3.1",
-    "stylelint-config-manzdev": "^0.0.18",
-    "vite": "^7.1.6",
-    "vite-tsconfig-paths": "^5.1.4"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maldita-malin/interpals.git"
   },
-  "keywords": [],
   "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "eslint.config.js",
+  "scripts": {
+    "deploy": "gh-pages -d dist",
+    "dev": "node app.js"
+  },
   "dependencies": {
     "cloudinary": "^2.8.0",
     "dotenv": "^17.2.3",
@@ -30,15 +29,13 @@
     "multer": "^2.0.2",
     "node-json-db": "^2.4.2"
   },
-  "description": "",
-  "main": "eslint.config.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/maldita-malin/interpals.git"
-  },
-  "author": "",
-  "bugs": {
-    "url": "https://github.com/maldita-malin/interpals/issues"
-  },
-  "homepage": "https://github.com/maldita-malin/interpals#readme"
+  "devDependencies": {
+    "eslint": "9.22.0",
+    "eslint-config-manzdev": "1.0.14-alpha",
+    "gh-pages": "^6.3.0",
+    "stylelint": "16.3.1",
+    "stylelint-config-manzdev": "^0.0.18",
+    "vite": "^7.1.6",
+    "vite-tsconfig-paths": "^5.1.4"
+  }
 }
