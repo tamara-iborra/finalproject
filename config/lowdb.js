@@ -9,11 +9,7 @@ async function initLowDB() {
   db = new Low(adapter, defaultData);
 
   await db.read();
-  console.log(db.data); // { users: [], posts: [] }
-  // db.data ||= {
-  //    users: [],
-  //    cartas: []
-  // };
+  console.log(db.data);
   await db.write();
   console.log("DB cargada correctamente", db.data);
 }

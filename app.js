@@ -26,12 +26,29 @@ app.use(express.urlencoded({ extended: true }));
 
 app.get("/", async (req, res) => {
   await db.read();
-  res.render("home", {
-    cartas: db.data.cartas
-  });
+  res.render("index");
 });
 
-// Ejemplo de ruta para crear carta
+
+//Ruta para signup
+app.get("/signup", (req, res) => {
+  res.render("signup");
+});
+
+//Ruta para login
+app.get("/login", (req, res) => {
+  res.render("login");
+});
+
+
+// Ejemplo de ruta para crear nueva carta
+//app.get("/", async (req, res) => {
+ // await db.read();
+ // res.render("crear-carta", {
+ //   cartas: db.data.cartas
+  //});
+//});
+
 app.post("/crear-carta", async (req, res) => {
   const { titulo, contenido } = req.body;
 
@@ -57,7 +74,7 @@ app.post("/enviar-carta", upload.single("cartaImg"), async (req, res) => {
   res.send("Carta enviada correctamente");
 });
 
-// Ruta para enviar la carta o otro usuari@ desconocida (=convertir la carta finalizada en formato png y subir la carta como un archivo de imagen a Cloudinary y k sea enviada a otro usuari@ random)
+// Funcionalidad para enviar la carta o otro usuari@ desconocida (=convertir la carta finalizada en formato png y subir la carta como un archivo de imagen a Cloudinary y k sea enviada a otro usuari@ random)
 
 // Siempre va ultimo el port
 app.listen(PORT, () => {
