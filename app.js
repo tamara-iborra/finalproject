@@ -7,11 +7,13 @@ import { engine } from "express-handlebars";
 import cloudinary from "./config/cloudinary.js";
 import { db, initLowDB } from "./config/lowdb.js";
 import upload from "./config/multer.js";
+// Rutas
+import usersRoutes from "./routes/users.routes.js";
 
 const app = express();
 const PORT = 3000;
 
-initLowDB();
+await initLowDB();
 
 // Configurar Handlebars
 app.engine("handlebars", engine());
@@ -20,7 +22,11 @@ app.set("views", "./views");
 
 // Middlewares
 app.use(express.static("public"));
+app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+// Montar rutas externas
+app.use("/users", usersRoutes);
 
 // Ruta para el landing = index.handlebars
 app.get("/", async (req, res) => {
@@ -44,6 +50,7 @@ app.post("/signup", (req, res) => {
       username,
       email,
       password,
+      idiomas: [],
       createdAt: new Date().toISOString(),
     });
     db.write();
