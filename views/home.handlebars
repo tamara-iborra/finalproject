@@ -1,33 +1,53 @@
-<h1>Mi escritorio</h1>
-
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
-  <title>{{title}}</title>
-  <link rel="stylesheet" href="./public/css/styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>InterPals - Inicio</title>
+  <link rel="stylesheet" href="../public/css/styles.css">
+  <link rel="stylesheet" href="../public/css/home.css">
+  <script defer src="../public/scripts/navbar.js"></script>
+  
 </head>
+
 <body>
+  <site-navbar></site-navbar>
 
-  <main>
-    <section class="home-actions">
-      <p>¿Quieres empezar una nueva carta?</p>
-      <!-- Botón que lleva a la página para escribir la carta -->
-      <a href="/nuevacarta" class="btn btn-big">✍️ Escribir nueva carta</a>
-    </section>
-  </main>
+  <section class="hero">
+    <h2 class="hero-title">Crea conexiones reales y seguras con <span>InterPals</span></h2>
+    <p>Escribe cartas anónimas y personalizadas y conecta con personas de todo el mundo de forma segura.</p>
+    <a href="signup.html" class="btn btn-big">Empezar</a>
+  </section>
 
-<main>
-    <section class="home-actions">
-      <!-- Botón que lleva a la página para ver las cartas k has recibido -->
-      <a href="/buzon" class="btn btn-big">Buzón</a>
-    </section>
-  </main>
+  <section class="about">
+    <h2>¿Qué es InterPals?</h2>
+    <p>InterPals es una plataforma donde puedes conectar con personas de todo el mundo de forma segura y divertida.
+      Puedes escribir cartas o mensajes anónimos, personalizarlos con colores, stickers y estilos, y compartirlos
+      fácilmente con quien quieras.</p>
 
-</body>
-</html>
+    <h3>Cómo funciona:</h3>
+    <ul>
+      <li>1️⃣ Crea tu carta o mensaje en segundos.</li>
+      <li>2️⃣ Personalízalo a tu gusto con colores, stickers y fuentes.</li>
+      <li>3️⃣ Obtén un enlace único para compartir con tus amigos o con la comunidad.</li>
+    </ul>
+  </section>
 
+  <section class="features">
+    <div class="feature">
+      <h3>Personalización total</h3>
+      <p>Elige colores, estilos y stickers para tus cartas.</p>
+    </div>
+    <div class="feature">
+      <h3>Privacidad real</h3>
+      <p>Todos tus mensajes son completamente anónimos.</p>
+    </div>
+  </section>
 
-<footer class="footer">
-    <p>&copy; 2025 InterPals. Todos los derechos reservados.</p>
+  <footer class="footer">
+    © 2025 InterPals
   </footer>
+</body>
+
+</html>
