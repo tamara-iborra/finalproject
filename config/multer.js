@@ -1,5 +1,5 @@
 // config/multer.js
-import multer from 'multer';
+import multer from "multer";
 
 // Configurar Multer para guardar en memoria temporalmente
 const storage = multer.memoryStorage();
@@ -11,10 +11,10 @@ const upload = multer({
   },
   fileFilter: (req, file, cb) => {
     // Aceptar solo imágenes
-    if (file.mimetype.startsWith('image/')) {
+    if (file.mimetype.startsWith("image/")) {
       cb(null, true);
     } else {
-      cb(new Error('Solo se permiten imágenes'), false);
+      cb(new Error("Solo se permiten imágenes"), false);
     }
   }
 });

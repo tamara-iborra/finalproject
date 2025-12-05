@@ -22,17 +22,15 @@ app.set("views", "./views");
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 
-
 // Ruta para el landing = index.handlebars
 app.get("/", async (req, res) => {
   await db.read();
   res.render("index");
 });
 
-
-//Ruta para signup
+// Ruta para signup
 app.get("/signup", (req, res) => {
-  res.render("signup"), { title: "Sign up" };
+  res.render("signup", { title: "Sign up" });
 });
 
 // Procesar signup (POST)
@@ -56,9 +54,9 @@ app.post("/signup", (req, res) => {
   }
 });
 
-//Ruta para login
+// Ruta para login
 app.get("/login", (req, res) => {
-  res.render("login"), { title: "Log in" };
+  res.render("login", { title: "Log in" });
 });
 
 // Procesar login (POST)
@@ -78,11 +76,9 @@ app.post("/login", (req, res) => {
 });
 
 // Ruta home = para la pagina donde aparece el boton "crear una nueva carta" por ejemplo y el buzon (cartas recibidaas gusardadas)
-app.get('/home', (req, res) => {
-  res.render('home', { title: 'Home' });
+app.get("/home", (req, res) => {
+  res.render("home", { title: "Home" });
 });
-
-
 
 // Ejemplo de ruta para crear nueva carta
 app.get("/nuevacarta", async (req, res) => {
@@ -118,8 +114,6 @@ app.post("/enviarcarta", upload.single("cartaImg"), async (req, res) => {
 });
 
 // Funcionalidad para enviar la carta o otro usuari@ desconocida (=convertir la carta finalizada en formato png y subir la carta como un archivo de imagen a Cloudinary y k sea enviada a otro usuari@ random)
-
-
 
 // Siempre va ultimo el port
 app.listen(PORT, () => {
