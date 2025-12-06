@@ -29,9 +29,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use("/users", usersRoutes);
 
 // Ruta para el landing = index.handlebars
-app.get("/", async (req, res) => {
-  await db.read();
-  res.render("index");
+app.get("/", async (_req, res) => {
+  res.render("home");
 });
 
 // Ruta para signup
