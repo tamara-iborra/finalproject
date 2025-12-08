@@ -30,10 +30,10 @@ app.use("/api/auth", authApiRouter);
 app.use("/users", usersRoutes);
 
 app.get("/", async (_req, res) => {
-  res.render("home");
+  res.render("landing");
 });
 
-app.get("/home", (req, res) => {
+app.get("/home", (_req, res) => {
   res.render("home", { title: "Home" });
 });
 

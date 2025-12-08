@@ -1,5 +1,5 @@
 import express from "express";
-import { db } from "../../config/lowdb";
+import { db } from "../../config/lowdb.js";
 
 const authApiRouter = express.Router();
 
