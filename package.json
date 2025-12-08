@@ -17,7 +17,7 @@
   "main": "eslint.config.js",
   "scripts": {
     "deploy": "gh-pages -d dist",
-    "dev": "node app.js"
+    "dev": "nodemon --watch config --watch constants --watch controllers --watch public --watch routes --watch services --watch src --watch views app.js"
   },
   "dependencies": {
     "cloudinary": "^2.8.0",
@@ -33,6 +33,7 @@
     "eslint": "9.22.0",
     "eslint-config-manzdev": "1.0.14-alpha",
     "gh-pages": "^6.3.0",
+    "nodemon": "^3.1.11",
     "stylelint": "16.3.1",
     "stylelint-config-manzdev": "^0.0.18",
     "vite": "^7.1.6",
