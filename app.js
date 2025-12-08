@@ -1,9 +1,13 @@
 import "dotenv/config";
 import express from "express";
 import { engine } from "express-handlebars";
+import cookieParser from 'cookie-parser';
+
 import cloudinary from "./config/cloudinary.js";
 import { db, initLowDB } from "./config/lowdb.js";
 import upload from "./config/multer.js";
+// Middlewares
+import authenticateToken from './middleware/auth.js';
 // Rutas
 import usersRoutes from "./routes/users.routes.js";
 import { authWebRouter } from "./routes/auth/auth.web.js";
@@ -23,6 +27,7 @@ app.set("views", "./views");
 app.use(express.static("public"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(cookieParser());
 
 // Montar rutas externas
 app.use("/auth", authWebRouter);
@@ -33,7 +38,7 @@ app.get("/", async (_req, res) => {
   res.render("landing");
 });
 
-app.get("/home", (_req, res) => {
+app.get("/home", authenticateToken, (_req, res) => {
   res.render("home", { title: "Home" });
 });
 
