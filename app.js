@@ -1,14 +1,13 @@
 import "dotenv/config";
-
 import express from "express";
 import { engine } from "express-handlebars";
-
-// db = database = base de datos
 import cloudinary from "./config/cloudinary.js";
 import { db, initLowDB } from "./config/lowdb.js";
 import upload from "./config/multer.js";
 // Rutas
 import usersRoutes from "./routes/users.routes.js";
+import { authWebRouter } from "./routes/auth/auth.web.js";
+import { authApiRouter } from "./routes/auth/auth.api.js";
 
 const app = express();
 const PORT = 3000;
@@ -26,56 +25,12 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Montar rutas externas
+app.use("/auth", authWebRouter);
+app.use("/api/auth", authApiRouter);
 app.use("/users", usersRoutes);
 
 app.get("/", async (_req, res) => {
   res.render("home");
-});
-
-// Rutas Web Auth
-app.get("/auth/signup", (req, res) => {
-  res.render("signup", { title: "Sign up" });
-});
-
-app.get("/auth/login", (_req, res) => {
-  res.render("login", { title: "Log in" });
-});
-
-// API Auth
-app.post("/api/auth/signup", (req, res) => {
-  const { username, email, password } = req.body;
-
-  if (username && email && password) {
-    // Guardar usuario en lowdb
-    db.data.users.push({
-      id: Date.now(),
-      username,
-      email,
-      password,
-      idiomas: [],
-      createdAt: new Date().toISOString(),
-    });
-    db.write();
-
-    res.redirect("/home");
-  } else {
-    res.redirect("/auth/signup");
-  }
-});
-
-app.post("/api/auth/login", (req, res) => {
-  const { username, password } = req.body;
-
-  // Ejemplo de validación contra la base de datos lowdb
-  const user = db.data.users.find(
-    (u) => u.username === username && u.password === password
-  );
-
-  if (user) {
-    res.redirect("/home");
-  } else {
-    res.redirect("/auth/login");
-  }
 });
 
 app.get("/home", (req, res) => {
