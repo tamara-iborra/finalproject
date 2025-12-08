@@ -5,12 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>InterPals - Entrar</title>
-    <link rel="stylesheet" href="./public/css/login.css">
-    <script defer src="./partials/navbar.handlebars"></script>
+    <link rel="stylesheet" href="/css/styles.css">
 </head>
 
 <body>
-    <site-navbar></site-navbar>
+    {{> navbar }}
 
     <div class="form-container">
         <h2 class="title">Iniciar sesión</h2>
@@ -20,7 +19,7 @@
             <button class="btn btn-full">Entrar</button>
 
             <p class="switch-link">
-                ¿No tienes cuenta? <a href="signup">Crear cuenta</a>
+                ¿No tienes cuenta? <a href="/auth/signup">Crear cuenta</a>
             </p>
         </form>
     </div>

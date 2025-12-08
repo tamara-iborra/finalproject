@@ -28,18 +28,21 @@ app.use(express.urlencoded({ extended: true }));
 // Montar rutas externas
 app.use("/users", usersRoutes);
 
-// Ruta para el landing = index.handlebars
 app.get("/", async (_req, res) => {
   res.render("home");
 });
 
-// Ruta para signup
-app.get("/signup", (req, res) => {
+// Rutas Web Auth
+app.get("/auth/signup", (req, res) => {
   res.render("signup", { title: "Sign up" });
 });
 
-// Procesar signup (POST)
-app.post("/signup", (req, res) => {
+app.get("/auth/login", (_req, res) => {
+  res.render("login", { title: "Log in" });
+});
+
+// API Auth
+app.post("/api/auth/signup", (req, res) => {
   const { username, email, password } = req.body;
 
   if (username && email && password) {
@@ -56,17 +59,11 @@ app.post("/signup", (req, res) => {
 
     res.redirect("/home");
   } else {
-    res.redirect("/signup");
+    res.redirect("/auth/signup");
   }
 });
 
-// Ruta para login
-app.get("/login", (req, res) => {
-  res.render("login", { title: "Log in" });
-});
-
-// Procesar login (POST)
-app.post("/login", (req, res) => {
+app.post("/api/auth/login", (req, res) => {
   const { username, password } = req.body;
 
   // Ejemplo de validación contra la base de datos lowdb
@@ -77,11 +74,10 @@ app.post("/login", (req, res) => {
   if (user) {
     res.redirect("/home");
   } else {
-    res.redirect("/login");
+    res.redirect("/auth/login");
   }
 });
 
-// Ruta home = para la pagina donde aparece el boton "crear una nueva carta" por ejemplo y el buzon (cartas recibidaas gusardadas)
 app.get("/home", (req, res) => {
   res.render("home", { title: "Home" });
 });
