@@ -32,6 +32,7 @@
   "devDependencies": {
     "eslint": "9.22.0",
     "eslint-config-manzdev": "1.0.14-alpha",
+    "eslint-plugin-import": "^2.32.0",
     "gh-pages": "^6.3.0",
     "stylelint": "16.3.1",
     "stylelint-config-manzdev": "^0.0.18",
@@ -39,3 +40,4 @@
     "vite-tsconfig-paths": "^5.1.4"
   }
 }
+

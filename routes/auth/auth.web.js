@@ -12,4 +12,4 @@ authWebRouter.get("/login", (_req, res) => {
 
 export {
   authWebRouter
-}
+};
