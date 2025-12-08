@@ -1,13 +1,15 @@
-<h1>Mi escritorio</h1>
-
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
-  <title>{{title}}</title>
-  <link rel="stylesheet" href="./public/css/styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>InterPals - Mi escritorio</title>
+  <link rel="stylesheet" href="/css/styles.css">
 </head>
+
 <body>
+  {{> navbar }}
 
   <main>
     <section class="home-actions">
@@ -17,17 +19,16 @@
     </section>
   </main>
 
-<main>
+  <main>
     <section class="home-actions">
       <!-- Botón que lleva a la página para ver las cartas k has recibido -->
       <a href="/buzon" class="btn btn-big">Buzón</a>
     </section>
   </main>
 
+  <footer class="footer">
+    © 2025 InterPals
+  </footer>
+
 </body>
 </html>
-
-
-<footer class="footer">
-    <p>&copy; 2025 InterPals. Todos los derechos reservados.</p>
-  </footer>

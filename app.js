@@ -1,14 +1,13 @@
 import "dotenv/config";
-
 import express from "express";
 import { engine } from "express-handlebars";
-
-// db = database = base de datos
 import cloudinary from "./config/cloudinary.js";
 import { db, initLowDB } from "./config/lowdb.js";
 import upload from "./config/multer.js";
 // Rutas
 import usersRoutes from "./routes/users.routes.js";
+import { authWebRouter } from "./routes/auth/auth.web.js";
+import { authApiRouter } from "./routes/auth/auth.api.js";
 
 const app = express();
 const PORT = 3000;
@@ -26,64 +25,15 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Montar rutas externas
+app.use("/auth", authWebRouter);
+app.use("/api/auth", authApiRouter);
 app.use("/users", usersRoutes);
 
-// Ruta para el landing = index.handlebars
-app.get("/", async (req, res) => {
-  await db.read();
-  res.render("index");
+app.get("/", async (_req, res) => {
+  res.render("landing");
 });
 
-// Ruta para signup
-app.get("/signup", (req, res) => {
-  res.render("signup", { title: "Sign up" });
-});
-
-// Procesar signup (POST)
-app.post("/signup", (req, res) => {
-  const { username, email, password } = req.body;
-
-  if (username && email && password) {
-    // Guardar usuario en lowdb
-    db.data.users.push({
-      id: Date.now(),
-      username,
-      email,
-      password,
-      idiomas: [],
-      createdAt: new Date().toISOString(),
-    });
-    db.write();
-
-    res.redirect("/home");
-  } else {
-    res.redirect("/signup");
-  }
-});
-
-// Ruta para login
-app.get("/login", (req, res) => {
-  res.render("login", { title: "Log in" });
-});
-
-// Procesar login (POST)
-app.post("/login", (req, res) => {
-  const { username, password } = req.body;
-
-  // Ejemplo de validación contra la base de datos lowdb
-  const user = db.data.users.find(
-    (u) => u.username === username && u.password === password
-  );
-
-  if (user) {
-    res.redirect("/home");
-  } else {
-    res.redirect("/login");
-  }
-});
-
-// Ruta home = para la pagina donde aparece el boton "crear una nueva carta" por ejemplo y el buzon (cartas recibidaas gusardadas)
-app.get("/home", (req, res) => {
+app.get("/home", (_req, res) => {
   res.render("home", { title: "Home" });
 });
 
