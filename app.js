@@ -8,6 +8,7 @@ import { db, initLowDB } from "./config/lowdb.js";
 import upload from "./config/multer.js";
 // Middlewares
 import authenticateToken from './middleware/auth.js';
+
 // Rutas
 import usersRoutes from "./routes/users.routes.js";
 import { authWebRouter } from "./routes/auth/auth.web.js";
@@ -75,6 +76,7 @@ app.post("/enviarcarta", upload.single("cartaImg"), async (req, res) => {
   res.send("Tu carta ha sido enviado al metaverso");
 });
 
+app.use("/users", usersRoutes);
 // Funcionalidad para enviar la carta o otro usuari@ desconocida (=convertir la carta finalizada en formato png y subir la carta como un archivo de imagen a Cloudinary y k sea enviada a otro usuari@ random)
 
 // Siempre va ultimo el port

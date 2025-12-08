@@ -1,11 +1,17 @@
 import { db } from "../config/lowdb.js";
 
-// Actualizar o guardar idiomas de un usuario
+// Actualizar idiomas
 export const actualizarIdiomas = async (req, res) => {
-  const { userId, idiomas } = req.body;
+  let { userId, idiomas } = req.body;
 
   if (!userId || !idiomas) {
     return res.status(400).json({ mensaje: "Faltan datos" });
+  }
+
+  userId = Number(userId);
+
+  if (typeof idiomas === "string") {
+    idiomas = [idiomas];
   }
 
   await db.read();
@@ -17,17 +23,18 @@ export const actualizarIdiomas = async (req, res) => {
   }
 
   usuario.idiomas = idiomas;
-
   await db.write();
 
   res.json({ mensaje: "Idiomas actualizados", idiomas: usuario.idiomas });
 };
 
-// Filtrar usuarios que hablen un idioma específico
+// Filtrar por idioma
 export const filtrarPorIdioma = async (req, res) => {
   const { idioma } = req.query;
 
-  if (!idioma) return res.status(400).json({ mensaje: "No se especificó idioma" });
+  if (!idioma) {
+    return res.status(400).json({ mensaje: "No se especificó idioma" });
+  }
 
   await db.read();
 

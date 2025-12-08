@@ -4,7 +4,21 @@ export default [
   ...recommended,
   {
     rules: {
-      /* Tus reglas aquí */
-	 }
+      "import/order": [
+        "error",
+        {
+          groups: [
+            "builtin",
+            "external",
+            "internal",
+            "parent",
+            "sibling",
+            "index"
+          ],
+          alphabeticalOrder: true,
+          caseInsensitive: true
+        }
+      ]
+    }
   }
 ];
