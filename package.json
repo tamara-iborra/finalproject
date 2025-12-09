@@ -27,10 +27,12 @@
     "express": "^5.1.0",
     "express-handlebars": "^8.0.3",
     "jsonwebtoken": "^9.0.3",
+    "fs": "^0.0.1-security",
     "lowdb": "^7.0.1",
     "mongodb": "^7.0.0",
     "multer": "^2.0.2",
-    "node-json-db": "^2.4.2"
+    "node-json-db": "^2.4.2",
+    "puppeteer": "^24.32.0"
   },
   "devDependencies": {
     "eslint": "9.22.0",
