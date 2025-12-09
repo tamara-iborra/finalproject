@@ -2,7 +2,7 @@ import express from "express";
 
 const authWebRouter = express.Router();
 
-authWebRouter.get("/signup", (req, res) => {
+authWebRouter.get("/signup", (_req, res) => {
   res.render("signup", { title: "Sign up" });
 });
 

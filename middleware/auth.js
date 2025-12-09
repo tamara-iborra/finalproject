@@ -3,8 +3,10 @@ import jwt from 'jsonwebtoken';
 const JWT_SECRET = 'mi-secreto-super-seguro-12345';
 
 // Middleware para verificar si el usuario está logueado
-const authenticateToken = (req, res, next) => {
+export const blockWhenNoAuthToken = (req, res, next) => {
   const token = req.cookies.authToken;
+
+  console.log('req.cookies:', req.cookies)
 
   if (!token) {
     return res.redirect('/auth/login');
@@ -20,4 +22,12 @@ const authenticateToken = (req, res, next) => {
   });
 };
 
-export default authenticateToken;
+// Middleware para registrar cuando el usuario está logeado y usarlo en las plantillas 
+export const authState = (req, res, next) => {
+  const token = req.cookies?.authToken;
+
+  console.log("Token:", token)
+  
+  res.locals.isLoggedIn = !!token;
+  next();
+};

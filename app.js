@@ -7,7 +7,7 @@ import cloudinary from "./config/cloudinary.js";
 import { db, initLowDB } from "./config/lowdb.js";
 import upload from "./config/multer.js";
 // Middlewares
-import authenticateToken from './middleware/auth.js';
+import { authState, blockWhenNoAuthToken } from './middleware/auth.js';
 
 // Rutas
 import usersRoutes from "./routes/users.routes.js";
@@ -29,6 +29,7 @@ app.use(express.static("public"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
+app.use(authState);
 
 // Montar rutas externas
 app.use("/auth", authWebRouter);
@@ -39,12 +40,12 @@ app.get("/", async (_req, res) => {
   res.render("landing");
 });
 
-app.get("/home", authenticateToken, (_req, res) => {
+app.get("/home", blockWhenNoAuthToken, (_req, res) => {
   res.render("home", { title: "Home" });
 });
 
 // Ejemplo de ruta para crear nueva carta
-app.get("/nuevacarta", async (req, res) => {
+app.get("/nuevacarta", blockWhenNoAuthToken, async (_req, res) => {
   await db.read();
   res.render("nuevacarta", {
     title: "Escribir nueva carta"

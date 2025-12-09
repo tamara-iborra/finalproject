@@ -88,8 +88,8 @@ authApiRouter.post("/login", async (req, res) => {
     // Error: Contraseña incorrecta:
     const isPasswordValid = await bcrypt.compare(password, user.password);
     if (!isPasswordValid) {
-      return res.render('login', { 
-        error: 'Usuario o contraseña incorrectos' 
+      return res.render('login', {
+        error: 'Usuario o contraseña incorrectos'
       });
     }
 
@@ -98,9 +98,17 @@ authApiRouter.post("/login", async (req, res) => {
 
   } catch (error) {
     return res.render('login', { 
-      error: 'Error en el inicio de sesión' 
+      error: 'Error en el inicio de sesión'
     });
   }
+});
+
+authApiRouter.post("/logout", (_req, res) => {
+  res.clearCookie("authToken", {
+    httpOnly: true,
+    secure: false, // true en producción con HTTPS
+  });
+  res.redirect("/auth/login");
 });
 
 export {
