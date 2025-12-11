@@ -1,0 +1,487 @@
+/* body {
+background-size: 55px 55px;
+background-image:
+  linear-gradient(to right, rgb(239, 249, 228) 3px, transparent 2px),
+  linear-gradient(to bottom, rgb(245, 255, 229) 3px, transparent 2px);
+background-color: #C7E5C0;
+} */
+
+body {
+    background-image: url(/images/fondo.webp);
+}
+
+
+
+/*body {
+  background: repeating-linear-gradient(
+    135deg,                
+    #e0e0e0 0px,
+    #e0e0e0 2px,            
+    transparent 2px,
+    transparent 30px       
+  );
+
+  background-size: 200% 200%;
+  animation: slide-diagonal 50s linear infinite;
+}
+
+@keyframes slide-diagonal {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 1000px 1000px; /* diagonal movement 
+  }
+}
+*/
+
+/* body {
+  margin: 0;
+  height: 100vh;
+
+  /* GRID LINES (stay still) */
+  /* background-image:
+    linear-gradient(to right, rgba(255,255,255,0.15) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.15) 1px, transparent 1px),
+
+    /* MOVING GRADIENT layer */
+    /* linear-gradient(135deg,
+      #952682,
+      #226197,
+      #9bf5a7,
+      #856402
+    );
+
+  background-size:
+    40px 40px,    /* vertical grid */
+   /*  40px 40px,    /* horizontal grid */
+  /*   300% 300%;    /* large gradient so it can move */
+
+ /*  background-position:
+    0 0,          /* DON'T MOVE grid layer */
+   /*  0 0,
+    0 0;          /* gradient starts here */
+
+ /*  animation: moveGradient 35s linear infinite;
+}
+
+@keyframes moveGradient {
+  0% {
+    background-position:
+      0 0,
+      0 0,
+      0 0;         
+  }
+  100% {
+    background-position:
+      0 0,
+      0 0,
+      1000px 1000px;
+  }
+}
+*/
+
+header {
+background: #FAFFEF;
+height: 40px;
+width: 100%;
+list-style: none;
+display: inline-block;
+font-family: "Roboto Mono", monospace;
+border-bottom: solid 3px #0E241E;
+box-shadow: 0px 5px 0 0 #0E241E;
+}
+
+/* Menú horizontal con texto blanco */
+header nav ul {
+display: flex;
+align-items: center;
+height: 100%;
+list-style: none;
+gap: 16px;
+padding: 0 20px;
+margin-top: 7px;
+}
+
+header nav a {
+color: #0E241E;
+text-decoration: none;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+.roboto-mono-headers {
+font-family: "Roboto Mono", monospace;
+font-optical-sizing: auto;
+font-weight: 400;
+font-style: normal;
+}
+
+
+.roboto-body {
+font-family: "Roboto", sans-serif;
+font-optical-sizing: auto;
+font-weight: 400;
+font-style: normal;
+font-variation-settings:
+  "wdth" 100;
+}
+
+
+.page {
+width: 100%;
+margin: 50px auto;   
+padding: 0 20px;  
+display: flex;
+flex-wrap: wrap;
+align-items: stretch;
+column-gap: 16px; /* margen horizontal entre columnas */
+row-gap: 0;       /* sin margen vertical extra con la toolbar */
+}
+
+
+#toolbar {
+width: 100%;
+background: #FAFFEF;
+padding: 10px;
+border: solid 3px #0E241E;
+margin-bottom: 20px;
+box-shadow: 12px 12px 0 0 #0E241E;
+box-sizing: border-box;
+}
+
+.main {
+width: 70%;
+}
+
+.left {
+width: 15%;
+}
+
+.right {
+width: 15%;
+}
+
+#left {
+flex: 0 0 120px;
+}
+
+#main {
+flex: 1 1 auto;
+min-width: 0;
+display: flex;
+flex-direction: column;
+}
+
+#left {
+display: flex;
+flex-direction: column;
+gap: 12px;
+}
+
+#left img {
+max-width: 100%;
+height: auto;
+}
+
+#right {
+flex: 0 0 120px;
+display: flex;
+flex-direction: column;
+gap: 16px;
+align-items: flex-start;
+}
+
+#right .buttons-container {
+margin-top: auto;
+}
+
+#right img {
+max-width: 100%;
+height: auto;
+}
+
+#wrapper-quill {
+
+width: 100%;
+height: 94%;
+margin-top: 28px;
+
+} 
+
+#wrapper-eve {
+width: 100%;
+height: 600px;
+background: linear-gradient(0deg,rgba(249, 244, 238, 1) 0%, rgba(229, 237, 216, 1) 100%);
+border: solid 3px #0E241E;
+box-shadow: 12px 12px 0 0 #0E241E;
+} 
+
+
+#smile {
+  text-align: right;
+  font-weight: bold;
+  font-size: large;
+}
+
+
+#editor {
+height: 90%;
+  width: 75%;
+  align-content: center;
+
+}
+
+#editor .ql-editor {
+  height: 100%;
+overflow-y: auto;
+font-family: 'Roboto Mono', sans-serif;
+}
+
+.editor {
+width: 100%;
+height: 100%;
+font-family: "Roboto Mono", monospace;
+}
+
+#editor-container {
+width: 100%;
+height: 100%;
+}
+
+#editor .ql-editor {
+font-size: 22px;
+}
+
+/* botones */
+.btn {
+display: flex;
+width: 100%;
+height:30%;
+padding: .5rem 1rem;
+text-align: justify;
+background-color: #FAFFEF;
+color: #0E241E;
+margin-top: 2rem;
+cursor: pointer;
+font-family: "Roboto Mono", sans-serif,;
+font-size: medium;
+font-weight: bold;
+border: solid 3px #0E241E;
+box-shadow: 6px 6px 0 0 #0E241E;
+}
+
+.btn:hover {
+  background-color: #c8ccbe;
+}
+
+#save-button{
+font-family: "Roboto Mono", sans-serif;
+font-weight: bold;
+width: 100px;
+  top: 550px;   
+  right: 250px;       
+  z-index: 1000;  
+}
+
+#send-button {
+ font-family: "Roboto Mono", sans-serif;
+ font-weight: bold;
+ font-size: 16px;
+ padding: 15px;
+width: 100px; 
+height: 50px;
+  top: 500px;   
+  right: 250px;       
+  z-index: 1000;     
+  text-align: center;
+}
+
+
+
+#sticker-button1 {
+background-color: #FAFFEF;
+border: solid 3px #0E241E;
+box-shadow: 6px 6px 0 0 #0E241E;
+ font-family: "Roboto Mono", sans-serif;
+ font-size: 15px;
+ font-weight: bold;
+ margin:auto;
+ margin-top: 75px;
+ padding: 10%;
+
+ 
+     
+}
+
+#sticker-button1:hover {
+  background-color: #c8ccbe;
+  cursor: pointer;
+}
+
+#sticker-button2 {
+background-color: #FAFFEF;
+border: solid 3px #0E241E;
+box-shadow: 6px 6px 0 0 #0E241E;
+ font-family: "Roboto Mono", sans-serif;
+ font-size: 15px;
+  font-weight: bold;
+ margin:auto;
+ margin-top: 75px;
+   padding: 10%;
+}
+
+#sticker-button2:hover {
+  background-color: #c8ccbe;
+  cursor: pointer;
+}
+
+#sticker-button3 {
+background-color: #FAFFEF;
+border: solid 3px #0E241E;
+box-shadow: 6px 6px 0 0 #0E241E;
+   font-weight: bold;
+ font-family: "Roboto Mono", sans-serif;
+ font-size: 15px;
+ margin:auto;
+ margin-top: 75px;
+  padding: 10%;
+}
+
+#sticker-button3:hover {
+  background-color: #c8ccbe;
+  cursor: pointer;
+}
+
+#sticker1 {
+  float:right;
+  margin-right: 30px;
+  margin-top: 10px;
+}
+
+#sticker2 {
+  margin-top: 425px;
+  margin-bottom: 0px;
+  margin-left: 10px;
+  margin-right: 10px;
+  float:left;
+}
+
+#sticker3 {
+  display: block;
+  margin: 0 auto;
+}
+
+
+.output img {
+width: 100%;
+}
+
+#palette-border {
+width: 50%;
+height: 44%;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: flex-start;
+padding: 6px;
+background-color: #E1FFF7;
+border: solid 4px #0E241E;
+box-shadow: 6px 6px 0 0 #0E241E;
+z-index: 1000;
+margin-top: 55%;
+margin-left: 20px;
+}
+
+#blue {
+width: 45px;
+height: 45px; 
+margin-top: 10px;
+margin-right: 10px;
+margin-left: 10px;
+background-color: #79B7FF;
+box-shadow: inset 5px 5px 0 0 rgba(3, 77, 56, 0.411);
+border: none;
+z-index: 1000;
+}
+
+#blue:hover {
+background-color: #4a719d;
+cursor: pointer;
+}
+
+#pink {
+width: 45px;
+height: 45px; 
+margin-top: 10px;
+margin-right: 10px;
+margin-left: 10px;
+background-color: #FF5197;
+box-shadow: inset 5px 5px 0 0 rgba(109, 6, 78, 0.411);
+border: none;
+z-index: 1000;
+}
+
+#pink:hover {
+background-color: #aa3765;
+cursor: pointer;
+}
+
+#yellow {
+width: 45px;
+height: 45px;
+display: flex; 
+margin-top: 5px;
+margin-right: 10px;
+margin-left: 10px;
+background-color: #FDFD22;
+box-shadow: inset 5px 5px 0 0 rgba(66, 77, 3, 0.411);
+border: none;
+z-index: 1000;
+}
+
+#yellow:hover {
+background-color: #a6a616;
+cursor: pointer;
+}
+
+#green {
+  width: 45px;
+  height: 45px;
+  display: flex; 
+  margin-top: 10px;
+  margin-right: 10px;
+  margin-left: 10px;
+  background-color: #3BB71D;
+  box-shadow: inset 5px 5px 0 0 rgba(3, 77, 4, 0.411);
+  border: none;
+  z-index: 1000;
+}
+
+#green:hover {
+  background-color: #1f600f;
+  cursor: pointer;
+}
+
+#white {
+  width: 45px;
+  height: 45px;
+  display: flex; 
+  margin-top: 10px;
+  margin-right: 10px;
+  margin-left: 10px;
+  background-color: #F9F4EE;
+box-shadow: inset 5px 5px 0 0 rgba(57, 61, 61, 0.411);
+  border: none;
+  z-index: 1000;
+}
+
+#white:hover {
+  background-color: #c1d6cd;
+  cursor: pointer;
+}

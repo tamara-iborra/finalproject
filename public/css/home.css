@@ -1,0 +1,43 @@
+/* * {
+    display: flex;
+} */
+
+body {
+    background-image: url(/images/fondo.webp);
+}
+
+.left {
+width: 48%;
+display: flex;
+}
+
+.right {
+width: 48%;
+display: flex;
+}
+
+
+#btn-escribir {
+display:flex;
+justify-content: left;
+min-width: 400px;
+min-height: 150;
+padding: 60px;
+margin: 40px;
+margin-left: 250px;
+margin-top: 60px;
+}
+
+#btn-buzon {
+    display: flex;
+    float: right;
+    min-width: 400px;
+    min-height: 150px;
+    text-align: center;
+margin: 100px;
+padding: 50px;
+padding-left: 170px;
+padding-top: 60px;
+margin-left: 850px;
+}
+

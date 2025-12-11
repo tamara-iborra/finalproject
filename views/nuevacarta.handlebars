@@ -5,27 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
      <!-- Links para el Quill y su stylesheet-->
     <link href="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.snow.css" rel="stylesheet" />
-    <link rel="stylesheet" href="./public/css/cartainterpals.css"/>
-    <!-- Links para Roboto-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <!--Links para Roboto Mono-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/nuevaCarta.css"/>
+  
     <title>textEditor</title>
 </head>
 
-
  <!-- Javascript del Quill-->
-<script src="./src/cartainterpals.js"></script>
+<!-- <script src="./app.js"></script> -->
 <script src="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.js"></script>
 
 <body>
-<header id="header">
-    <h1>Escribe y diseña tu carta</h1>
-</header>
+  {{>navbar}}
 
   <div class="page">
 
@@ -45,13 +35,14 @@
     <button class="ql-bold"></button>
     <button class="ql-italic"></button>
     <button class="ql-underline"></button>
-  
     <select class="ql-align"></select>
-    <select class="ql-size"></select>
+      <p id="smile">:]</p>
+    <!-- <select class="ql-size"></select> -->
   </div>
   <div id="wrapper-eve">
-       <img id="sticker2" src="sticker1_3.PNG" height="125" width="125">
-    <img id="sticker1" src="sticker1_3.PNG" height="125" width="125">
+    <img id="sticker3" src="/images/stickers/sticker3_3.PNG" height="30" width="900">
+       <img id="sticker2" src="/images/stickers/sticker2_3.PNG" height="125" width="125">
+    <img id="sticker1" src="/images/stickers/sticker1_3.PNG" height="125" width="125">
 <div id="wrapper-quill">
 <div id="editor">
   <div id="editor-container"></div>
@@ -64,11 +55,10 @@
 <!-- Contenedor paletas de colores-->
 
 <div id="palette-border">
+  <button id="yellow"></button>
   <button id="blue"></button>
   <button id="pink"></button>
-  <button id="yellow"></button>
   <button id="green"></button>
-  <button id="purple"></button>
   <button id="white"></button>
 </div>
 
@@ -76,13 +66,49 @@
 
 
 <div class="buttons-container">
-  <button class="send-button btn" id="send-button">Enviar</button>
-</div>
+  <button onclick="printImage()" id="btn-save" class="btn" >Guardar</button>
+  <button id="btn-send" class="btn" >Enviar</button>
 
 </div>
+
+
+<!-- Load html-to-image from CDN -->
+<script src="https://cdn.jsdelivr.net/npm/html-to-image@1.11.11/dist/html-to-image.min.js"></script>
+
+<script>
+  // Must be global for onclick to work
+  function printImage() {
+    const node = document.getElementById("wrapper-eve");
+
+    htmlToImage.toPng(node)
+      .then(function(url) {
+        const link = document.createElement("a");
+        link.href = url;
+        link.download = "captura.png";
+        link.click();
+      })
+      .catch(function(err){
+        console.error("ERROR:", err);
+      });
+  }
+</script>
+
+{{!-- 
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  document.getElementById("btn-save").addEventListener("click", () => {
+    console.log("BOTÓN FUNCIONA 🔥");
+  });
+});
+</script>
+
+<script>
+console.log("htmlToImage:", htmlToImage);
+</script> --}}
 
   <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
-  <script src="./src/cartainterpals.js"></script>
+  <script src="js/nuevaCarta.js"></script>
+
 
 </body>
 

@@ -1,0 +1,381 @@
+body {
+background-color: #E3E9C0;
+}
+
+/*
+Source - https://stackoverflow.com/a
+Posted by shunryu111, modified by community. See post 'Timeline' for change history
+Retrieved 2025-11-25, License - CC BY-SA 4.0
+*/
+body {
+background-size: 55px 55px;
+background-image:
+  linear-gradient(to right, rgb(255, 255, 255) 2px, transparent 2px),
+  linear-gradient(to bottom, rgb(255, 255, 255) 2px, transparent 2px);
+background-color: #E3E9C0;
+}
+
+header {
+background: #0f13ff;
+background: linear-gradient(0deg,rgba(15, 19, 255, 1) 38%, rgba(93, 33, 235, 1) 98%);
+height: 40px;
+width: 100%;
+list-style: none;
+display: inline-block;
+}
+
+/* Menú horizontal con texto blanco */
+header nav ul {
+display: flex;
+align-items: center;
+height: 100%;
+list-style: none;
+gap: 16px;
+padding: 0 20px;
+margin: 0;
+}
+
+header nav a {
+color: #ffffff;
+text-decoration: none;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+.roboto-mono-headers {
+font-family: "Roboto Mono", monospace;
+font-optical-sizing: auto;
+font-weight: 400;
+font-style: normal;
+}
+
+
+.roboto-body {
+font-family: "Roboto", sans-serif;
+font-optical-sizing: auto;
+font-weight: 400;
+font-style: normal;
+font-variation-settings:
+  "wdth" 100;
+}
+
+
+.page {
+width: 100%;
+margin: 50px auto;   
+padding: 0 20px;  
+display: flex;
+flex-wrap: wrap;
+align-items: stretch;
+column-gap: 16px; /* margen horizontal entre columnas */
+row-gap: 0;       /* sin margen vertical extra con la toolbar */
+}
+
+
+#toolbar {
+width: 100%;
+background: #FAFFEF;
+padding: 10px;
+border: none;
+margin-bottom: 20px;
+box-shadow: 5px 5px 0 0 rgba(3, 55, 77, 0.432);
+box-sizing: border-box;
+}
+
+.main {
+width: 70%;
+}
+
+.left {
+width: 15%;
+}
+
+.right {
+width: 15%;
+}
+
+#left {
+flex: 0 0 120px;
+}
+
+#main {
+flex: 1 1 auto;
+min-width: 0;
+display: flex;
+flex-direction: column;
+}
+
+#right {
+flex: 0 0 120px;
+}
+
+#left {
+display: flex;
+flex-direction: column;
+gap: 12px;
+}
+
+#left img {
+max-width: 100%;
+height: auto;
+}
+
+#right {
+display: flex;
+flex-direction: column;
+gap: 16px;
+align-items: flex-start;
+}
+
+#right .buttons-container {
+margin-top: auto;
+}
+
+#right img {
+max-width: 100%;
+height: auto;
+}
+
+#wrapper-quill {
+width: 100%;
+height: 700px;
+margin-right: 150px;
+background-color: rgb(251, 179, 179);
+} 
+
+#wrapper-eve {
+width: 100%;
+height: 100%;
+background-color: rgb(251, 179, 179);
+} 
+
+
+#editor {
+height: 100%; 
+  width: 600px;
+
+}
+
+#editor .ql-editor {
+height: 100%;
+overflow-y: auto;
+font-family: 'Roboto', sans-serif;
+}
+
+.editor {
+width: 100%;
+height: 100%;
+font-family: "Roboto Mono", monospace;
+}
+
+#editor-container {
+width: 100%;
+height: 100%;
+}
+
+#editor .ql-editor {
+font-size: 22px;
+}
+
+/* botones */
+.btn {
+display: flex;
+padding: .5rem 1rem;
+color: white;
+margin-top: 1rem;
+border: none;
+cursor: pointer;
+font-family: "Roboto Mono", sans-serif;
+}
+
+#save-button{
+background-color: #008083;
+box-shadow: 5px 5px 0 0 rgba(3, 55, 77, 0.432);
+font-family: "Roboto Mono", sans-serif;
+width: 100px;
+  top: 550px;   
+  right: 250px;       
+  z-index: 1000;  
+}
+
+#send-button {
+background-color: #008083;
+ box-shadow: 5px 5px 0 0 rgba(3, 55, 77, 0.432);
+ font-family: "Roboto Mono", sans-serif;
+ font-size: 16px;
+ padding: 15px;
+width: 100px; 
+height: 50px;
+  top: 500px;   
+  right: 250px;       
+  z-index: 1000;     
+}
+
+
+
+#sticker-button1 {
+background-color: #008083;
+ box-shadow: 5px 5px 0 0 rgba(3, 55, 77, 0.432);
+ font-family: "Roboto Mono", sans-serif;
+ font-size: 18px;
+ margin:auto;
+ margin-top: 75px;
+     
+}
+
+#sticker-button2 {
+background-color: #008083;
+ box-shadow: 5px 5px 0 0 rgba(3, 55, 77, 0.432);
+ font-family: "Roboto Mono", sans-serif;
+ font-size: 18px;
+ margin:auto;
+ margin-top: 75px;
+     
+}
+
+#sticker-button3 {
+background-color: #008083;
+ box-shadow: 5px 5px 0 0 rgba(3, 55, 77, 0.432);
+ font-family: "Roboto Mono", sans-serif;
+ font-size: 18px;
+ margin:auto;
+ margin-top: 75px;
+     
+}
+
+#sticker1 {
+  float:right;
+}
+
+#sticker2 {
+  margin-top: 450px;
+  float:left;
+}
+
+.output img {
+width: 100%;
+}
+
+#palette-border {
+width: 65px;
+height: 350px;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: flex-start;
+padding: 6px;
+background-color: #95c4c3;
+box-shadow: 5px 5px 0 0 rgba(3, 55, 77, 0.432);
+z-index: 1000;
+}
+
+#blue {
+width: 45px;
+height: 45px; 
+margin-top: 10px;
+margin-right: 10px;
+margin-left: 10px;
+background-color: rgb(0, 255, 183);
+box-shadow: inset 5px 5px 0 0 rgba(3, 77, 56, 0.411);
+border: none;
+z-index: 1000;
+}
+
+#blue:hover {
+background-color: rgb(0, 184, 132);
+cursor: pointer;
+}
+
+#pink {
+width: 45px;
+height: 45px; 
+margin-top: 10px;
+margin-right: 10px;
+margin-left: 10px;
+background-color: #FF7C84;
+ box-shadow: inset 5px 5px 0 0 #ba5960;
+border: none;
+z-index: 1000;
+}
+
+#pink:hover {
+background-color: #a7526e;
+cursor: pointer;
+}
+
+#yellow {
+width: 45px;
+height: 45px;
+display: flex; 
+margin-top: 10px;
+margin-right: 10px;
+margin-left: 10px;
+background-color: #FFFA01;
+ box-shadow: inset 5px 5px 0 0 #64686c;
+border: none;
+z-index: 1000;
+}
+
+#yellow:hover {
+background-color: #96b004;
+cursor: pointer;
+}
+
+#green {
+  width: 45px;
+  height: 45px;
+  display: flex; 
+  margin-top: 10px;
+  margin-right: 10px;
+  margin-left: 10px;
+  background-color: #6EFF0D;
+   box-shadow: inset 5px 5px 0 0 #64686c;
+  border: none;
+  z-index: 1000;
+}
+
+#green:hover {
+  background-color: #0ba820;
+  cursor: pointer;
+}
+
+#purple {
+  width: 45px;
+  height: 45px;
+  display: flex; 
+  margin-top: 10px;
+  margin-right: 10px;
+  margin-left: 10px;
+  background-color: #c778ff;
+   box-shadow: inset 5px 5px 0 0 #64686c;
+  border: none;
+  z-index: 1000;
+}
+
+#purple:hover {
+  background-color: #54349e;
+  cursor: pointer;
+}
+
+#white {
+  width: 45px;
+  height: 45px;
+  display: flex; 
+  margin-top: 10px;
+  margin-right: 10px;
+  margin-left: 10px;
+  background-color: rgb(232, 232, 232);
+   box-shadow: inset 5px 5px 0 0 #64686c;
+  border: none;
+  z-index: 1000;
+}
+
+#white:hover {
+  background-color: #b0b0b0;
+  cursor: pointer;
+}

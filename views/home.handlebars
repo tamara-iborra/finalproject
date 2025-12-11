@@ -6,25 +6,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>InterPals - Mi escritorio</title>
   <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="/css/home.css">
 </head>
 
 <body>
+
   {{> navbar }}
-
-  <main>
+    <div class="left">
     <section class="home-actions">
-      <p>¿Quieres empezar una nueva carta?</p>
       <!-- Botón que lleva a la página para escribir la carta -->
-      <a href="/nuevacarta" class="btn btn-big">✍️ Escribir nueva carta</a>
+      <a href="/nuevacarta" id="btn-escribir" class="btn btn-big">✍️ Escribir nueva carta</a>
     </section>
-  </main>
+    </div>
 
-  <main>
+    <div class="right">
     <section class="home-actions">
       <!-- Botón que lleva a la página para ver las cartas k has recibido -->
-      <a href="/buzon" class="btn btn-big">Buzón</a>
+      <button id="btn-buzon" class="btn btn-big">📬 Buzón</button>
     </section>
-  </main>
+    </div>
 
   <footer class="footer">
     © 2025 InterPals

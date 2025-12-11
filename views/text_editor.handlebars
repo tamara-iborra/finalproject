@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="esp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <!-- Links para el Quill y su stylesheet-->
+    <link href="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.snow.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./text_editor.css"/>
+    <!-- Links para Roboto-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <!--Links para Roboto Mono-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <title>textEditor</title>
+</head>
+
+ <!-- Javascript del Quill-->
+<script src="./app.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.js"></script>
+
+<body>
+  {{>navbar}}
+
+  <div class="page">
+
+<div id="left">
+
+  <button id="sticker-button1">Sticker 1</button>
+  
+  <!-- <img id="sticker2" src="BANNER.png" height="300" width="300"> -->
+  <button id="sticker-button2">Sticker 2</button>
+  <button id="sticker-button3">Sticker 3</button>
+
+</div>
+
+
+<div id="main">
+  <div id="toolbar">
+    <button class="ql-bold"></button>
+    <button class="ql-italic"></button>
+    <button class="ql-underline"></button>
+    <select class="ql-align"></select>
+      <p id="smile">:]</p>
+    <!-- <select class="ql-size"></select> -->
+  </div>
+  <div id="wrapper-eve">
+    <img id="sticker3_1" src="sticker3_1.png" height="30" width="1200">
+       <img id="sticker2" src="sticker2_3.PNG" height="125" width="125">
+    <img id="sticker1" src="images/sticker1_3.PNG" height="125" width="125">
+<div id="wrapper-quill">
+<div id="editor">
+  <div id="editor-container"></div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="right">
+<!-- Contenedor paletas de colores-->
+
+<div id="palette-border">
+  <button id="yellow"></button>
+  <button id="blue"></button>
+  <button id="pink"></button>
+  <button id="green"></button>
+  <button id="white"></button>
+</div>
+
+
+
+
+<div class="buttons-container">
+  <button class="btn" >Guardar</button>
+  <button class="btn" >Enviar</button>
+
+</div>
+
+</div>
+
+  <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+  <script src="./text_editor.js"></script>
+
+</body>
+
+</html>

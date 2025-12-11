@@ -1,4 +1,13 @@
 {
-  "users": [],
+  "users": [
+    {
+      "id": 1,
+      "username": "paula",
+      "email": "paula3@gmail.com",
+      "password": "$2b$10$DjHoWLzmkj0I7q2ervlg5ueMdUCvAun/6DoTvVNN7wZwm2Nyh4Wg2",
+      "languages": [],
+      "createdAt": "2025-12-10T21:31:10.105Z"
+    }
+  ],
   "posts": []
 }
